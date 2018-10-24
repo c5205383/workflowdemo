@@ -1,0 +1,90 @@
+{
+    "id": "financialform",
+    "name": "FinancialForm",
+    "revision": "0.1",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "_",
+            "type": "section",
+            "title": "基本信息",
+            "content": [
+                {
+                    "id": "_name",
+                    "type": "string",
+                    "label": "姓名",
+                    "readOnly": false,
+                    "value": "${context.employee.name}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "__age",
+                    "type": "integer",
+                    "label": "年龄",
+                    "readOnly": false,
+                    "value": "${context.employee.age}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "__1",
+                    "type": "string",
+                    "label": "性别",
+                    "readOnly": false,
+                    "value": "${context.employee.sex}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "_",
+                    "type": "integer",
+                    "label": "工资",
+                    "readOnly": false,
+                    "value": "${context.employee.salary}",
+                    "constraints": {
+                        "required": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "__2",
+            "type": "section",
+            "title": "审批意见",
+            "content": [
+                {
+                    "id": "_",
+                    "type": "string",
+                    "label": "意见反馈",
+                    "readOnly": false,
+                    "value": "${context.employee.finance.comment}",
+                    "control": {
+                        "type": "TextArea",
+                        "properties": {
+                            "height": "medium"
+                        }
+                    },
+                    "constraints": {
+                        "required": false
+                    }
+                }
+            ]
+        }
+    ],
+    "decisions": [
+        {
+            "id": "_pass",
+            "text": "通过",
+            "decisionType": "positive"
+        },
+        {
+            "id": "_notpass",
+            "text": "不通过",
+            "decisionType": "negative"
+        }
+    ]
+}
